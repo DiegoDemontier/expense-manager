@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAddExpense } from '../actions'
 
 export default function InputTaple() {
   const [date, setDate] = useState('');
@@ -6,11 +8,20 @@ export default function InputTaple() {
   const [description, setDescription] = useState('');
   const [value, setValue] = useState(0);
   const teste = ['Alimentação', 'Lazer', 'Trabalho', 'Transporte','Saúde'];
+  
+  const dispatch = useDispatch();
+  const expenses = useSelector(state => state.wallet.expenses)
 
   function handleSubmit(event) {
     event.preventDefault();
-  }
-
+    dispatch(setAddExpense([...expenses, {
+      date,
+      category,
+      description,
+      value,
+    }]))
+  };
+  
   return(
     <form onSubmit={ handleSubmit }>
       <label HtmlFor="date">
