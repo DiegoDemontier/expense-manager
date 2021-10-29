@@ -1,6 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function Table (){
+  const expenses = useSelector(state => state.wallet.expenses)
+
+
   return(
     <table>
       <thead>
@@ -12,13 +16,15 @@ export default function Table (){
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th>teste1</th>
-          <th>teste2</th>
-          <th>teste3</th>
-          <th>teste4</th>
-        </tr>
+        {expenses.map(expense => (
+          <tr>
+            <th>{expense.date}</th>
+            <th>{expense.category}</th>
+            <th>{expense.description}</th>
+            <th>{expense.value}</th>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
-}
+};

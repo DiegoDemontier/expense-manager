@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAddExpense } from '../actions'
 
 export default function InputTaple() {
+  const form = useRef()
+
   const [date, setDate] = useState('');
   const [category, setCategory] = useState('Alimentação');
   const [description, setDescription] = useState('');
@@ -20,14 +22,16 @@ export default function InputTaple() {
       description,
       value,
     }]))
+    setDescription('')
+    form.current.reset();
   };
   
   return(
-    <form onSubmit={ handleSubmit }>
+    <form ref={ form } onSubmit={ handleSubmit }>
       <label HtmlFor="date">
         Data
         <input 
-          id="date" 
+          id="date"
           type="date"
           onChange={ ({ target }) => setDate(target.value)}
         />
@@ -50,7 +54,8 @@ export default function InputTaple() {
       <label HtmlFor="description">
         Descrição
         <input 
-          id="description" 
+          id="description"
+          required
           type="text"
           onChange={ ({ target }) => setDescription(target.value)}
         />
@@ -60,6 +65,7 @@ export default function InputTaple() {
         Valor
         <input 
           id="value" 
+          required
           type="number"
           onChange={ ({ target }) => setValue(target.value)}
         />
