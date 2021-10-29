@@ -1,7 +1,8 @@
-import { ADD_EXPENSE } from '../actions';
+import { ADD_EXPENSE, ADD_TAG } from '../actions';
 
 const INITIAL_STATE = {
-  expenses: []
+  expenses: [],
+  categories: ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde', 'Adicionar Categoria']
 }
 
 const walletReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +11,10 @@ const walletReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state, expenses: action.payload,
       };
+    case ADD_TAG:
+      return {
+        ...state, categories: action.payload,
+      }
     default:
       return state;
   }
