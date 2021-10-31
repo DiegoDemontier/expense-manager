@@ -1,20 +1,38 @@
-import { ADD_EXPENSE, ADD_TAG } from '../actions';
+import { ADD_EXPENSE, ADD_CATEGORY } from '../actions';
 
 const INITIAL_STATE = {
   expenses: [],
-  categories: ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde', 'Adicionar Categoria']
-}
+  categories: {
+    Salário: false,
+    Renda: false,
+    Alimentação: true,
+    Lazer: true,
+    Trabalho: true,
+    Transporte: true,
+    Saúde: true,
+  },
+  /* categories: [
+    'Alimentação',
+    'Lazer',
+    'Trabalho',
+    'Transporte',
+    'Saúde',
+    'Adicionar Categoria',
+  ], */
+};
 
 const walletReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ADD_EXPENSE:
       return {
-        ...state, expenses: action.payload,
+        ...state,
+        expenses: action.payload,
       };
-    case ADD_TAG:
+    case ADD_CATEGORY:
       return {
-        ...state, categories: action.payload,
-      }
+        ...state,
+        categories: action.payload,
+      };
     default:
       return state;
   }

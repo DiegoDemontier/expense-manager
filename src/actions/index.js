@@ -1,13 +1,13 @@
 export const ADD_EXPENSE = 'ADD_EXPENSE';
 
-export const ADD_TAG = 'ADD_TAG';
+export const ADD_CATEGORY = 'ADD_CATEGORY';
 
 export const setAddExpense = (payload) => ({
   type: 'ADD_EXPENSE',
   payload,
 });
 
-export const setAddTag = (payload) => ({
-  type: 'ADD_TAG',
+export const setAddCategory = (payload) => ({
+  type: 'ADD_CATEGORY',
   payload,
 });
