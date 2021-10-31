@@ -6,10 +6,10 @@ export default function InputTaple() {
   const form = useRef(null);
 
   const [date, setDate] = useState('');
-  const [category, setCategory] = useState('Alimentação');
+  const [category, setCategory] = useState('Salário');
   const [description, setDescription] = useState('');
   const [value, setValue] = useState(0);
-  const [NewCategory, setNewCategory] = useState('');
+  /* const [NewCategory, setNewCategory] = useState(''); */
 
   const dispatch = useDispatch();
   const expenses = useSelector((state) => state.wallet.expenses);
@@ -26,11 +26,11 @@ export default function InputTaple() {
           date,
           category,
           description,
-          value: controlValue,
+          value: Number(controlValue),
         },
       ])
     );
-    setDescription('');
+    setCategory('Salário');
     form.current.reset();
   }
 
@@ -108,6 +108,7 @@ export default function InputTaple() {
           Valor
           <input
             id="value"
+            step="0.01"
             required
             type="number"
             onChange={({ target }) => setValue(target.value)}
