@@ -5,7 +5,6 @@
   left: 0;
 	box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
 }
 
 .App {
@@ -15,4 +14,5 @@
   align-items: center;
   text-align: center;
   background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  height: 100vh;
 }

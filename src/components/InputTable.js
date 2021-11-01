@@ -45,7 +45,7 @@ export default function InputTable() {
 
   function renderCategory() {
     return (
-      <div className="teste">
+      <div className="conteiner-input">
         <label HtmlFor="category">
           Categoria
           <select
@@ -86,8 +86,8 @@ export default function InputTable() {
 
   return (
     <div>
-      <form className="teste1" ref={form} onSubmit={handleSubmit}>
-        <div className="teste">
+      <form ref={form} onSubmit={handleSubmit}>
+        <div className="conteiner-input">
           <label HtmlFor="date">
             Data
             <input
@@ -99,7 +99,7 @@ export default function InputTable() {
         </div>
         {renderCategory()}
         {/* {category === 'Adicionar Categoria' ? addCategory() : renderCategory()} */}
-        <div className="teste">
+        <div className="conteiner-input">
           <label HtmlFor="description">
             Descrição
             <input
@@ -110,7 +110,7 @@ export default function InputTable() {
             />
           </label>
         </div>
-        <div className="teste">
+        <div className="conteiner-input">
           <label HtmlFor="value">
             Valor
             <input

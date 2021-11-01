@@ -1,10 +1,19 @@
-.teste1 {
+form {
   display: flex;
+  padding-top: 50px;
+  margin-top: 100px;
+  border-radius: 5px;
   width: 70vw;
   justify-content: space-between;
-  margin-top: 50px;
   align-items: flex-end;
   flex-wrap: wrap;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  font-size: 20px;
+  font-weight: 600;
 }
 
 input, select, button {
@@ -12,6 +21,7 @@ input, select, button {
   height: 30px;
   margin: 10px;
   border-radius: 5px;
+  font-size: 16px
 }
 
 button {
@@ -33,6 +43,6 @@ label {
   color: #426696;
 }
 
-.teste {
+.conteiner-input {
   text-align: left;
 }
