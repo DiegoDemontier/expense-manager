@@ -6,18 +6,12 @@ import './App.css';
 
 function App() {
   return (
-    <Switch>
-      <Route
-        exact
-        path="/"
-        component={ Login }
-      />
-      <Route
-        exact
-        path="/wallet"
-        component={ Wallet }
-      />
-    </Switch>
+    <div className="App">
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/wallet" component={Wallet} />
+      </Switch>
+    </div>
   );
 }
 
