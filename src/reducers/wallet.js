@@ -3,7 +3,6 @@ import { ADD_EXPENSE, ADD_CATEGORY } from '../actions';
 const INITIAL_STATE = {
   expenses: [],
   categories: {
-    Salário: false,
     Renda: false,
     Alimentação: true,
     Lazer: true,

@@ -1,0 +1,38 @@
+.teste1 {
+  display: flex;
+  width: 70vw;
+  justify-content: space-between;
+  margin-top: 50px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+input, select, button {
+  display: block;
+  height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+button {
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgb(101, 142, 198)
+  );
+  width: 200px;
+  border: solid 1px #1864ce;
+}
+
+select {
+  background-color: white;
+}
+
+label {
+  margin-left: 10px;
+  color: #426696;
+}
+
+.teste {
+  text-align: left;
+}

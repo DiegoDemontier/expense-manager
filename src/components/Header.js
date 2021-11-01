@@ -27,8 +27,7 @@ export default function Header() {
         </div>
         <div>
           <img
-            className="income-img"
-            src="https://img.icons8.com/wired/64/000000/low-price.png"
+            src="https://img.icons8.com/ultraviolet/60/000000/money--v2.png"
             alt=""
           />
         </div>
@@ -41,7 +40,7 @@ export default function Header() {
         </div>
         <div>
           <img
-            src="https://img.icons8.com/wired/64/000000/low-price.png"
+            src="https://img.icons8.com/ultraviolet/60/000000/check.png"
             alt=""
           />
         </div>
@@ -55,7 +54,10 @@ export default function Header() {
           <p>Balanço</p>
         </div>
         <div>
-          <img src="https://img.icons8.com/wired/64/000000/wallet.png" alt="" />
+          <img
+            src="https://img.icons8.com/ultraviolet/60/000000/wallet.png"
+            alt=""
+          />
         </div>
       </div>
     </div>

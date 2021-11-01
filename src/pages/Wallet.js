@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import InputTaple from '../components/InputTaple';
+import InputTable from '../components/InputTable';
 import Table from '../components/Table';
 
 export default function Wallet() {
@@ -8,7 +8,7 @@ export default function Wallet() {
     <>
       <h1>Sistema Financeiro</h1>
       <Header />
-      <InputTaple />
+      <InputTable />
       <Table />
     </>
   );

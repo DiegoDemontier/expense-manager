@@ -1,14 +1,23 @@
 .conteiner-header {
   display: flex;
-  justify-content: space-around;
   width: 70vw;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
+/* .conteiner-card:first-child {
+  margin-left: 0;
+}
+
+.conteiner-card:last-child {
+  margin-right: 0;
+} */
+
 .conteiner-card {
+  margin: 10px;
   display: flex;
   border-radius: 5px;
-  width: 250px;
+  width: 300px;
   height: 120px;
   background: linear-gradient(
     to left top,
@@ -30,11 +39,7 @@
 
 .conteiner-card div {
   color: #6b6f75;
-  font-size: 2rem;
-}
-
-.income-img {
-  transform: rotate(180deg);
+  font-size: 1.3rem;
 }
 
 .card-info {

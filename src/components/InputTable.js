@@ -2,11 +2,13 @@ import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAddExpense, setAddCategory } from '../actions';
 
-export default function InputTaple() {
+import './InputTable.css';
+
+export default function InputTable() {
   const form = useRef(null);
 
   const [date, setDate] = useState('');
-  const [category, setCategory] = useState('Salário');
+  const [category, setCategory] = useState('Renda');
   const [description, setDescription] = useState('');
   const [value, setValue] = useState(0);
   /* const [NewCategory, setNewCategory] = useState(''); */
@@ -30,7 +32,7 @@ export default function InputTaple() {
         },
       ])
     );
-    setCategory('Salário');
+    setCategory('Renda');
     form.current.reset();
   }
 
@@ -43,19 +45,21 @@ export default function InputTaple() {
 
   function renderCategory() {
     return (
-      <label HtmlFor="category">
-        Categoria
-        <select
-          id="category"
-          onChange={({ target }) => setCategory(target.value)}
-        >
-          {Object.keys(categories).map((category, index) => (
-            <option key={index} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-      </label>
+      <div className="teste">
+        <label HtmlFor="category">
+          Categoria
+          <select
+            id="category"
+            onChange={({ target }) => setCategory(target.value)}
+          >
+            {Object.keys(categories).map((category, index) => (
+              <option key={index} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
     );
   }
 
@@ -81,42 +85,45 @@ export default function InputTaple() {
   } */
 
   return (
-    <>
-      <form ref={form} onSubmit={handleSubmit}>
-        <label HtmlFor="date">
-          Data
-          <input
-            id="date"
-            type="date"
-            onChange={({ target }) => setDate(target.value)}
-          />
-        </label>
+    <div>
+      <form className="teste1" ref={form} onSubmit={handleSubmit}>
+        <div className="teste">
+          <label HtmlFor="date">
+            Data
+            <input
+              id="date"
+              type="date"
+              onChange={({ target }) => setDate(target.value)}
+            />
+          </label>
+        </div>
         {renderCategory()}
         {/* {category === 'Adicionar Categoria' ? addCategory() : renderCategory()} */}
-
-        <label HtmlFor="description">
-          Descrição
-          <input
-            id="description"
-            required
-            type="text"
-            onChange={({ target }) => setDescription(target.value)}
-          />
-        </label>
-
-        <label HtmlFor="value">
-          Valor
-          <input
-            id="value"
-            step="0.01"
-            required
-            type="number"
-            onChange={({ target }) => setValue(target.value)}
-          />
-        </label>
-
+        <div className="teste">
+          <label HtmlFor="description">
+            Descrição
+            <input
+              id="description"
+              required
+              type="text"
+              onChange={({ target }) => setDescription(target.value)}
+            />
+          </label>
+        </div>
+        <div className="teste">
+          <label HtmlFor="value">
+            Valor
+            <input
+              id="value"
+              step="0.01"
+              required
+              type="number"
+              onChange={({ target }) => setValue(target.value)}
+            />
+          </label>
+        </div>
         <button type="submit">Adicionar despesa</button>
       </form>
-    </>
+    </div>
   );
 }
