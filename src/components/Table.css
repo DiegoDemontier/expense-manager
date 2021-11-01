@@ -1,13 +1,15 @@
 table {
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 50px;
-  width: 70vw;
+  border-radius: 8px;
+  padding: 12px;
+  padding-top: 40px;
+  margin-top: 40px;
+  width: 60vw;
   background: linear-gradient(
     to left top,
     rgba(255, 255, 255, 0.8),
     rgba(255, 255, 255, 0.5)
   );
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
 }
 
 tr {
@@ -18,12 +20,12 @@ tr {
 }
 
 tbody > tr:first-child {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 hr {
   margin-top: 20px;
-  height: 5px;
+  height: 4px;
   background-color: #426696;
 }
 
@@ -32,9 +34,18 @@ thead > tr {
 }
 
 tbody > tr {
-  margin-top: 5px;
+  margin-top: 8px;
   font-size: 20px;
   font-weight: normal;
   color: #6B6F75;
 }
 
+.red {
+  color: #f17d7d;
+  font-weight: bold;
+}
+
+.green {
+  color: rgb(140, 225, 79);
+  font-weight: bold;
+}

@@ -1,9 +1,9 @@
 form {
   display: flex;
-  padding-top: 50px;
-  margin-top: 100px;
-  border-radius: 5px;
-  width: 70vw;
+  padding-top: 8px;
+  margin-top: 40px;
+  border-radius: 8px;
+  width: 60vw;
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
@@ -14,24 +14,21 @@ form {
   );
   font-size: 20px;
   font-weight: 600;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
 }
 
 input, select, button {
   display: block;
-  height: 30px;
-  margin: 10px;
-  border-radius: 5px;
+  height: 40px;
+  border-radius: 8px;
   font-size: 16px
 }
 
 button {
-  background: linear-gradient(
-    to left top,
-    rgba(255, 255, 255, 0.8),
-    rgb(101, 142, 198)
-  );
-  width: 200px;
+  background: #B6DCFD;
+  width: 160px;
   border: solid 1px #1864ce;
+  margin: 12px;
 }
 
 select {
@@ -39,10 +36,10 @@ select {
 }
 
 label {
-  margin-left: 10px;
   color: #426696;
 }
 
 .conteiner-input {
   text-align: left;
+  margin: 12px;
 }

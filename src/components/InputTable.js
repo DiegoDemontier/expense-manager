@@ -85,12 +85,13 @@ export default function InputTable() {
   } */
 
   return (
-    <div>
+    <section>
       <form ref={form} onSubmit={handleSubmit}>
         <div className="conteiner-input">
           <label HtmlFor="date">
             Data
             <input
+              required
               id="date"
               type="date"
               onChange={({ target }) => setDate(target.value)}
@@ -124,6 +125,6 @@ export default function InputTable() {
         </div>
         <button type="submit">Adicionar despesa</button>
       </form>
-    </div>
+    </section>
   );
 }
