@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import './Table.css';
 
-export default function Table() {
+export default function Table(props) {
   const expenses = useSelector((state) => state.wallet.expenses);
 
   return (
@@ -15,13 +15,12 @@ export default function Table() {
             <th>Categoria</th>
             <th>Descrição</th>
             <th>Valor</th>
+            <th>Editar</th>
           </tr>
         </thead>
-        <hr />
         <tbody className="table-body">
           {expenses.map((expense, index) => (
             <tr key={index}>
-              {console.log(expense.date)}
               <td>{expense.date}</td>
               <td>{expense.category}</td>
               <td>{expense.description}</td>
@@ -29,6 +28,14 @@ export default function Table() {
                 {expense.value > 0
                   ? `R$ ${expense.value.toFixed(2)}`
                   : `R$ ${(expense.value * -1).toFixed(2)}`}
+              </td>
+              <td>
+                <button
+                  onClick={() => props.handleClick(expense)}
+                  type="button"
+                >
+                  Editar
+                </button>
               </td>
             </tr>
           ))}

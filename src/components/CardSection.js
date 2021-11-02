@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import './Section.css';
+import './CardSection.css';
 
 export default function Section() {
   const expenses = useSelector((state) => state.wallet.expenses);

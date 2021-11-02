@@ -10,14 +10,6 @@ const INITIAL_STATE = {
     Transporte: true,
     Saúde: true,
   },
-  /* categories: [
-    'Alimentação',
-    'Lazer',
-    'Trabalho',
-    'Transporte',
-    'Saúde',
-    'Adicionar Categoria',
-  ], */
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
