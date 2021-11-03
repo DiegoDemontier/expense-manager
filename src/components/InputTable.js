@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAddExpense } from '../actions';
 
@@ -10,10 +10,15 @@ export default function InputTable() {
   const [category, setCategory] = useState('Renda');
   const [description, setDescription] = useState('');
   const [value, setValue] = useState(0);
+  const [id, setId] = useState(0);
 
   const dispatch = useDispatch();
   const expenses = useSelector((state) => state.wallet.expenses);
   const categories = useSelector((state) => state.wallet.categories);
+
+  useEffect(() => {
+    if (expenses.length > 0) setId(expenses[expenses.length - 1].id + 1);
+  }, [expenses]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -23,6 +28,7 @@ export default function InputTable() {
       setAddExpense([
         ...expenses,
         {
+          id,
           date,
           category,
           description,
@@ -55,27 +61,6 @@ export default function InputTable() {
     );
   }
 
-  /* function addCategory() {
-    return (
-      <>
-        <label HtmlFor="addCategory">
-          Nova Categoria
-          <input
-            id="addCategory"
-            type="text"
-            onChange={({ target }) => setNewCategory(target.value)}
-          />
-        </label>
-        <button type="button" onClick={handleAddCategory}>
-          +
-        </button>
-        <button type="button" onClick={() => setCategory('Alimentação')}>
-          x
-        </button>
-      </>
-    );
-  } */
-
   return (
     <section>
       <form ref={form} onSubmit={handleSubmit}>
@@ -92,7 +77,6 @@ export default function InputTable() {
           </label>
         </div>
         {renderCategory()}
-        {/* {category === 'Adicionar Categoria' ? addCategory() : renderCategory()} */}
         <div className="conteiner-input">
           <label htmlFor="description">
             Descrição

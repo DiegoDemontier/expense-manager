@@ -1,4 +1,4 @@
-import { ADD_EXPENSE, ADD_CATEGORY } from '../actions';
+import { ADD_EXPENSE, ADD_CATEGORY, DELETE_EXPENSE } from '../actions';
 
 const INITIAL_STATE = {
   expenses: [],
@@ -18,6 +18,13 @@ const walletReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         expenses: action.payload,
+      };
+    case DELETE_EXPENSE:
+      return {
+        ...state,
+        expenses: state.expenses.filter(
+          (expense) => expense.id !== action.payload
+        ),
       };
     case ADD_CATEGORY:
       return {

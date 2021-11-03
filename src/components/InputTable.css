@@ -35,6 +35,10 @@ form {
   font-size: 16px
 }
 
+input {
+  padding-left: 8px;
+}
+
 .btn-input-edit {
   background: #B6DCFD;
   width: 100px;

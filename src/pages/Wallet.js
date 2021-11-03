@@ -18,7 +18,11 @@ export default function Wallet() {
     <>
       <Header />
       <CardSection />
-      {edit ? <InputTable /> : <EditTable expense={editExpense} />}
+      {edit ? (
+        <InputTable />
+      ) : (
+        <EditTable setEdit={setEdit} expense={editExpense} />
+      )}
       <Table handleClick={handleClick} />
     </>
   );

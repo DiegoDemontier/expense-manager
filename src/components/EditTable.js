@@ -1,37 +1,42 @@
 import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAddExpense } from '../actions';
+import { getDeleteExpense, setAddExpense } from '../actions';
 
 import './InputTable.css';
 
 export default function InputTable(props) {
-  const form = useRef(null);
   const [date, setDate] = useState(props.expense.date);
   const [category, setCategory] = useState(props.expense.category);
   const [description, setDescription] = useState(props.expense.description);
-  const [value, setValue] = useState(props.expense.value);
+  const [value, setValue] = useState(Math.abs(props.expense.value));
 
   const dispatch = useDispatch();
   const expenses = useSelector((state) => state.wallet.expenses);
   const categories = useSelector((state) => state.wallet.categories);
 
-  function handleSubmit(event) {
+  function handleDelete(event) {
     event.preventDefault();
-    let controlValue = categories[category] ? value * -1 : value;
+    dispatch(getDeleteExpense(props.expense.id));
+    props.setEdit(true);
+  }
 
-    dispatch(
-      setAddExpense([
-        ...expenses,
-        {
-          date,
-          category,
-          description,
-          value: Number(controlValue),
-        },
-      ])
+  function handleEdit(event) {
+    event.preventDefault();
+    const controlValue = categories[category] ? value * -1 : value;
+
+    const index = expenses.findIndex(
+      (expense) => expense.id === props.expense.id
     );
-    setCategory('Renda');
-    form.current.reset();
+    const expense = {
+      id: props.expense.id,
+      date,
+      category,
+      description,
+      value: Number(controlValue),
+    };
+    expenses.splice(index, 1, expense);
+    dispatch(setAddExpense(expenses));
+    props.setEdit(true);
   }
 
   function renderCategory() {
@@ -58,7 +63,7 @@ export default function InputTable(props) {
 
   return (
     <section>
-      <form ref={form} onSubmit={handleSubmit}>
+      <form>
         <div className="conteiner-input">
           <label htmlFor="date">
             Data
@@ -91,7 +96,7 @@ export default function InputTable(props) {
             Valor
             <input
               className="form_input-edit"
-              value={value}
+              value={Math.abs(value)}
               id="value"
               step="0.01"
               required
@@ -100,10 +105,10 @@ export default function InputTable(props) {
             />
           </label>
         </div>
-        <button className="btn-input-edit" type="submit">
+        <button className="btn-input-edit" type="submit" onClick={handleEdit}>
           Editar
         </button>
-        <button className="btn-input-edit" type="submit">
+        <button className="btn-input-edit" type="submit" onClick={handleDelete}>
           Deletar
         </button>
       </form>
