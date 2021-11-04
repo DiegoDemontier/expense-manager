@@ -1,15 +1,13 @@
 .conteiner-header {
   display: flex;
-  width: 60vw;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  width: 900px;
 }
 
 .conteiner-card {
-  margin-top: 40px;
+  flex-grow: 1;
+  margin: 40px 10px 10px;
   display: flex;
   border-radius: 8px;
-  width: 300px;
   height: 120px;
   background: linear-gradient(
     to left top,
@@ -17,11 +15,19 @@
     rgba(255, 255, 255, 0.5)
   );
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-around;
   word-wrap: break-word;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.conteiner-card:first-child {
+  margin-left: 0px;
+}
+
+.conteiner-card:last-child {
+  margin-right: 0px;
 }
 
 .conteiner-card p {

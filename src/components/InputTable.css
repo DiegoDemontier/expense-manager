@@ -3,10 +3,10 @@ form {
   padding-top: 8px;
   margin-top: 40px;
   border-radius: 8px;
-  width: 60vw;
+  width: 900px;
   justify-content: space-between;
   align-items: flex-end;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   background: linear-gradient(
     to left top,
     rgba(255, 255, 255, 0.8),

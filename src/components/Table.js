@@ -6,6 +6,13 @@ import './Table.css';
 export default function Table(props) {
   const expenses = useSelector((state) => state.wallet.expenses);
 
+  function formatDate(date) {
+    let year = date.substr(0, 4);
+    let month = date.substr(5, 2);
+    let day = date.substr(8, 4);
+    return `${day}/${month}/${year}`;
+  }
+
   return (
     <main>
       <table>
@@ -21,7 +28,7 @@ export default function Table(props) {
         <tbody className="table-body">
           {expenses.map((expense, index) => (
             <tr key={index}>
-              <td>{expense.date}</td>
+              <td>{formatDate(expense.date)}</td>
               <td>{expense.category}</td>
               <td>{expense.description}</td>
               <td className={expense.value > 0 ? 'green' : 'red'}>

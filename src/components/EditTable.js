@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDeleteExpense, setAddExpense } from '../actions';
 
@@ -45,7 +45,7 @@ export default function InputTable(props) {
         <label htmlFor="category">
           Categoria
           <select
-            className="form_input-edit"
+            className="form_input teste"
             value={category}
             id="category"
             onChange={({ target }) => setCategory(target.value)}
@@ -68,7 +68,7 @@ export default function InputTable(props) {
           <label htmlFor="date">
             Data
             <input
-              className="form_input-edit"
+              className="form_input teste"
               value={date}
               required
               id="date"
@@ -82,7 +82,7 @@ export default function InputTable(props) {
           <label htmlFor="description">
             Descrição
             <input
-              className="form_input-edit"
+              className="form_input teste"
               value={description}
               id="description"
               required
@@ -95,7 +95,7 @@ export default function InputTable(props) {
           <label htmlFor="value">
             Valor
             <input
-              className="form_input-edit"
+              className="form_input teste"
               value={Math.abs(value)}
               id="value"
               step="0.01"
@@ -105,10 +105,18 @@ export default function InputTable(props) {
             />
           </label>
         </div>
-        <button className="btn-input-edit" type="submit" onClick={handleEdit}>
+        <button
+          className="btn-input-edit teste"
+          type="submit"
+          onClick={handleEdit}
+        >
           Editar
         </button>
-        <button className="btn-input-edit" type="submit" onClick={handleDelete}>
+        <button
+          className="btn-input-edit teste"
+          type="submit"
+          onClick={handleDelete}
+        >
           Deletar
         </button>
       </form>

@@ -27,7 +27,7 @@ export default function Section() {
         </div>
         <div>
           <img
-            src="https://img.icons8.com/ultraviolet/60/000000/money--v2.png"
+            src="https://img.icons8.com/ultraviolet/50/000000/money--v2.png"
             alt=""
           />
         </div>
@@ -40,7 +40,7 @@ export default function Section() {
         </div>
         <div>
           <img
-            src="https://img.icons8.com/ultraviolet/60/000000/check.png"
+            src="https://img.icons8.com/ultraviolet/50/000000/check.png"
             alt=""
           />
         </div>
@@ -57,7 +57,7 @@ export default function Section() {
         </div>
         <div>
           <img
-            src="https://img.icons8.com/ultraviolet/60/000000/wallet.png"
+            src="https://img.icons8.com/ultraviolet/50/000000/wallet.png"
             alt=""
           />
         </div>
