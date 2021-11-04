@@ -1,0 +1,73 @@
+form {
+  display: flex;
+  padding-top: 8px;
+  margin-top: 40px;
+  border-radius: 8px;
+  width: 900px;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+}
+
+
+
+.form_input-edit {
+  width: 150px;
+  display: block;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px
+}
+
+.form_input {
+  width: 150px;
+  display: block;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px
+}
+
+input {
+  padding-left: 8px;
+}
+
+.btn-input-edit {
+  background: #B6DCFD;
+  width: 100px;
+  border: solid 1px #1864ce;
+  margin: 12px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px
+}
+
+.btn-input {
+  background: #B6DCFD;
+  width: 150px;
+  border: solid 1px #1864ce;
+  margin: 12px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px
+}
+
+select {
+  background-color: white;
+}
+
+label {
+  color: #426696;
+}
+
+.conteiner-input {
+  text-align: left;
+  margin: 12px;
+}
