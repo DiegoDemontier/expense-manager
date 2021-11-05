@@ -1,12 +1,10 @@
 import React from 'react';
 
-import './InputRegistration.css';
-
 export default function InputRegistration() {
   function renderEmail() {
     return (
       <label className="input-email">
-        Email:
+        Email
         <input type="email" />
       </label>
     );
@@ -15,7 +13,7 @@ export default function InputRegistration() {
   function renderFirstName() {
     return (
       <label className="input-first-name">
-        Nome:
+        Nome
         <input type="text" />
       </label>
     );
@@ -24,7 +22,7 @@ export default function InputRegistration() {
   function renderLastName() {
     return (
       <label className="input-last-name">
-        Nome:
+        Sobrenome
         <input type="text" />
       </label>
     );
@@ -33,7 +31,7 @@ export default function InputRegistration() {
   function renderPassword() {
     return (
       <label className="input-password">
-        Nome:
+        Senha
         <input type="text" />
       </label>
     );
@@ -42,7 +40,7 @@ export default function InputRegistration() {
   function renderConfirmPassword() {
     return (
       <label className="input-confirm-password">
-        Nome:
+        Confirmação de Senha
         <input type="text" />
       </label>
     );
@@ -50,9 +48,9 @@ export default function InputRegistration() {
 
   function renderRadio() {
     return (
-      <label className="input-radio">
-        <input type="radio" />
-        Eu li e aceito os termos de uso
+      <label htmlFor="radio" className="input-radio">
+        <input id="radio" type="radio" />
+        Eu li e aceito os <span>termos de uso</span>
       </label>
     );
   }

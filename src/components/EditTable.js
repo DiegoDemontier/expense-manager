@@ -62,7 +62,7 @@ export default function InputTable(props) {
   }
 
   return (
-    <section>
+    <section className="conteiner-expense">
       <form>
         <div className="conteiner-input">
           <label htmlFor="date">

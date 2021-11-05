@@ -62,7 +62,7 @@ export default function InputTable() {
   }
 
   return (
-    <section>
+    <section className="conteiner-expense">
       <form ref={form} onSubmit={handleSubmit}>
         <div className="conteiner-input">
           <label htmlFor="date">
