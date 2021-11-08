@@ -19,7 +19,7 @@ export default function Section() {
   const totalBalance = totalIncome + totalExpenses;
 
   return (
-    <section className="conteiner-header">
+    <section className="conteiner-info-cad">
       <div className="conteiner-card">
         <div className="card-info">
           <h4>{`R$ ${totalIncome.toFixed(2)}`}</h4>

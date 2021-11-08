@@ -4,7 +4,7 @@ import './Header.css';
 
 export default function Header() {
   return (
-    <header>
+    <header className="conteiner-header">
       <div>Sistema Financeiro</div>
       <div>Filtrar</div>
       <div>Nome Completo</div>

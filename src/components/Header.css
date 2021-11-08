@@ -1,6 +1,9 @@
-header{
+.conteiner-header {
+  font-size: 20px;
+  margin: auto;
   border-radius: 8px;
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
   height: 10vh;
   background: linear-gradient(
     to left top,
@@ -11,4 +14,18 @@ header{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  justify-items: center;
+}
+
+@media (max-width: 950px) {
+  .conteiner-header {
+    width: 660px;
+  }
+}
+
+@media (max-width: 700px) {
+  .conteiner-header {
+    width: 70vw;
+    min-width: 300px;
+  }
 }

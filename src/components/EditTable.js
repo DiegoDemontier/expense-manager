@@ -41,85 +41,85 @@ export default function InputTable(props) {
 
   function renderCategory() {
     return (
-      <div className="conteiner-input">
-        <label htmlFor="category">
-          Categoria
-          <select
-            className="form_input teste"
-            value={category}
-            id="category"
-            onChange={({ target }) => setCategory(target.value)}
-          >
-            {Object.keys(categories).map((category, index) => (
-              <option key={index} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
+      <label className="input_category" htmlFor="category">
+        Categoria
+        <select
+          className="form_input"
+          value={category}
+          id="category"
+          onChange={({ target }) => setCategory(target.value)}
+        >
+          {Object.keys(categories).map((category, index) => (
+            <option key={index} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </label>
+    );
+  }
+
+  function renderDate() {
+    return (
+      <label className="input_date" htmlFor="date">
+        Data
+        <input
+          className="form_input"
+          value={date}
+          /* required */
+          id="date"
+          type="date"
+          onChange={({ target }) => setDate(target.value)}
+        />
+      </label>
+    );
+  }
+
+  function renderDescription() {
+    return (
+      <label className="input_description" htmlFor="description">
+        Descrição
+        <input
+          className="form_input"
+          id="description"
+          value={description}
+          required
+          type="text"
+          onChange={({ target }) => setDescription(target.value)}
+        />
+      </label>
+    );
+  }
+
+  function renderValue() {
+    return (
+      <label className="input_value" htmlFor="value">
+        Valor
+        <input
+          className="form_input"
+          id="value"
+          value={value}
+          step="0.01"
+          required
+          type="number"
+          onChange={({ target }) => setValue(target.value)}
+        />
+      </label>
     );
   }
 
   return (
-    <section>
-      <form>
-        <div className="conteiner-input">
-          <label htmlFor="date">
-            Data
-            <input
-              className="form_input teste"
-              value={date}
-              required
-              id="date"
-              type="date"
-              onChange={({ target }) => setDate(target.value)}
-            />
-          </label>
-        </div>
-        {renderCategory()}
-        <div className="conteiner-input">
-          <label htmlFor="description">
-            Descrição
-            <input
-              className="form_input teste"
-              value={description}
-              id="description"
-              required
-              type="text"
-              onChange={({ target }) => setDescription(target.value)}
-            />
-          </label>
-        </div>
-        <div className="conteiner-input">
-          <label htmlFor="value">
-            Valor
-            <input
-              className="form_input teste"
-              value={Math.abs(value)}
-              id="value"
-              step="0.01"
-              required
-              type="number"
-              onChange={({ target }) => setValue(target.value)}
-            />
-          </label>
-        </div>
-        <button
-          className="btn-input-edit teste"
-          type="submit"
-          onClick={handleEdit}
-        >
-          Editar
-        </button>
-        <button
-          className="btn-input-edit teste"
-          type="submit"
-          onClick={handleDelete}
-        >
-          Deletar
-        </button>
-      </form>
-    </section>
+    <form className="edit-form-expense">
+      {renderDate()}
+      {renderCategory()}
+      {renderDescription()}
+      {renderValue()}
+      <button className="btn-salve" type="submit" onClick={handleEdit}>
+        Salvar
+      </button>
+      <button className="btn-delete" type="submit" onClick={handleDelete}>
+        Deletar
+      </button>
+    </form>
   );
 }
