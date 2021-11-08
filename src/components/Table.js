@@ -9,15 +9,15 @@ export default function Table(props) {
   function formatDate(date) {
     let year = date.substr(0, 4);
     let month = date.substr(5, 2);
-    let day = date.substr(8, 4);
+    let day = date.substr(8, 2);
     return `${day}/${month}/${year}`;
   }
 
   return (
     <main>
-      <table>
-        <thead>
-          <tr className="table-head">
+      <table className="conteiner-table">
+        <thead className="table-head">
+          <tr>
             <th>Data</th>
             <th>Categoria</th>
             <th>Descrição</th>
@@ -38,6 +38,7 @@ export default function Table(props) {
               </td>
               <td>
                 <button
+                  className="btn-edit"
                   onClick={() => props.handleClick(expense)}
                   type="button"
                 >

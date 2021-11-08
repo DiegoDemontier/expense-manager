@@ -1,19 +1,25 @@
 .conteiner-registration {
-  margin-top: 100px;
-  width: 550px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr) .3fr 1fr;
-  grid-gap: 20px;
-  padding: 30px 15px 40px 15px;
+  margin-top: 15vh;
   border-radius: 8px;
+  width: 550px;
   background: linear-gradient(
     to left top,
     rgba(255, 255, 255, 0.8),
     rgba(255, 255, 255, 0.5)
   );
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
-  grid-template-areas: "h1 h1"
+}
+
+.form-registration {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr) .3fr .6fr;
+  grid-gap: 20px;
+  padding: 0 15px 30px 15px;
+  border-radius: 8px;
+  justify-content: center;
+  grid-template-areas:
                        "email email"
                        "firstName lastName"
                        "password confirmPassword"
@@ -22,7 +28,8 @@
 }
 
 .conteiner-registration h1 {
-  grid-area: h1;
+  padding: 20px 15px;
+  text-align: center;
   color: #426696
 }
 
@@ -46,16 +53,16 @@
   grid-area: confirmPassword;
 }
 
-.input-radio {
+.input-checkbox {
   grid-area: terms;
   text-align: left;
 }
 
-.input-radio input {
+.input-checkbox input {
   margin-right: 10px;
 }
 
-.input-radio span {
+.input-checkbox span {
   color: #1864ce;
   text-decoration: underline;
 }
@@ -85,18 +92,25 @@
 .input-last-name input,
 .input-password input,
 .input-confirm-password input {
-  outline-color: #1864ce;
-  border-color: #719ECE;
   border: solid 1px #1864ce;
-
-  margin-top: 5px;
+  padding-left: 8px;
+  margin-top: 4px;
   height: 40px;
   border-radius: 8px;
-  font-size: 20px
+  font-size: 20px;
+}
+
+.input-email input:focus,
+.input-first-name input:focus,
+.input-last-name input:focus,
+.input-password input:focus,
+.input-confirm-password input:focus {
+  box-shadow: 0 0 10px #719ECE;
 }
 
 .conteiner-login {
-  width: 550px;
+  width: 25vw;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   margin-top: 200px;
@@ -117,7 +131,8 @@
 }
 
 .btn-login button {
-  width: 200px;
+  min-width: 110px;
+  width: 45%;
   height: 40px;
   background: #B6DCFD;
   border: solid 1px #1864ce;
@@ -126,7 +141,8 @@
   color: #0f4080
 }
 
-.conteiner-login .input-password {
+.conteiner-login .input-password,
+.input-email{
   margin-top: 10px;
 }
 
@@ -134,3 +150,34 @@
   height: 72.667px;
   color: #426696
 }
+
+.conteiner-login h1::after,
+.conteiner-registration h1::after {
+  content: "";
+	display: block;
+	border-bottom: 4px solid #B6DCFD;
+	padding-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .conteiner-registration {
+    width: 85vw;
+    min-width: 300px;  
+  }
+  
+  .form-registration {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-email input,
+  .input-first-name input,
+  .input-last-name input,
+  .input-password input,
+  .input-confirm-password input,
+  .btn-registration {
+    height: 35px;
+  }
+}
+

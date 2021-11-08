@@ -6,7 +6,7 @@ import './InputTable.css';
 
 export default function InputTable() {
   const form = useRef(null);
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState('2021-11-8');
   const [category, setCategory] = useState('Renda');
   const [description, setDescription] = useState('');
   const [value, setValue] = useState(0);
@@ -18,7 +18,13 @@ export default function InputTable() {
 
   useEffect(() => {
     if (expenses.length > 0) setId(expenses[expenses.length - 1].id + 1);
+    setDate(
+      `${new Date().getFullYear()}-${
+        new Date().getMonth() + 1
+      }-0${new Date().getDate()}`
+    );
   }, [expenses]);
+  console.log(date);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -42,70 +48,79 @@ export default function InputTable() {
 
   function renderCategory() {
     return (
-      <div className="conteiner-input">
-        <label htmlFor="category">
-          Categoria
-          <select
-            className="form_input"
-            id="category"
-            onChange={({ target }) => setCategory(target.value)}
-          >
-            {Object.keys(categories).map((category, index) => (
-              <option key={index} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
+      <label className="input_category" htmlFor="category">
+        Categoria
+        <select
+          className="form_input"
+          id="category"
+          onChange={({ target }) => setCategory(target.value)}
+        >
+          {Object.keys(categories).map((category, index) => (
+            <option key={index} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </label>
+    );
+  }
+
+  function renderDate() {
+    return (
+      <label className="input_date" htmlFor="date">
+        Data
+        <input
+          className="form_input"
+          /* required */
+          value={date}
+          id="date"
+          type="date"
+          onChange={({ target }) => setDate(target.value)}
+        />
+      </label>
+    );
+  }
+
+  function renderDescription() {
+    return (
+      <label className="input_description" htmlFor="description">
+        Descrição
+        <input
+          className="form_input"
+          id="description"
+          required
+          type="text"
+          onChange={({ target }) => setDescription(target.value)}
+        />
+      </label>
+    );
+  }
+
+  function renderValue() {
+    return (
+      <label className="input_value" htmlFor="value">
+        Valor
+        <input
+          className="form_input"
+          id="value"
+          step="0.01"
+          required
+          type="number"
+          onChange={({ target }) => setValue(target.value)}
+        />
+      </label>
     );
   }
 
   return (
-    <section className="conteiner-expense">
-      <form ref={form} onSubmit={handleSubmit}>
-        <div className="conteiner-input">
-          <label htmlFor="date">
-            Data
-            <input
-              className="form_input"
-              /* required */
-              id="date"
-              type="date"
-              onChange={({ target }) => setDate(target.value)}
-            />
-          </label>
-        </div>
-        {renderCategory()}
-        <div className="conteiner-input">
-          <label htmlFor="description">
-            Descrição
-            <input
-              className="form_input"
-              id="description"
-              required
-              type="text"
-              onChange={({ target }) => setDescription(target.value)}
-            />
-          </label>
-        </div>
-        <div className="conteiner-input">
-          <label htmlFor="value">
-            Valor
-            <input
-              className="form_input"
-              id="value"
-              step="0.01"
-              required
-              type="number"
-              onChange={({ target }) => setValue(target.value)}
-            />
-          </label>
-        </div>
-        <button className="btn-input" type="submit">
-          Adicionar despesa
-        </button>
-      </form>
-    </section>
+    <form className="conteiner-form-expense" ref={form} onSubmit={handleSubmit}>
+      {renderDate()}
+      {renderCategory()}
+      {renderDescription()}
+      {renderValue()}
+      <button className="btn-input" type="submit">
+        Adicionar despesa
+      </button>
+    </form>
   );
 }

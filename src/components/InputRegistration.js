@@ -48,8 +48,8 @@ export default function InputRegistration() {
 
   function renderRadio() {
     return (
-      <label htmlFor="radio" className="input-radio">
-        <input id="radio" type="radio" />
+      <label htmlFor="checkbox" className="input-checkbox">
+        <input id="checkbox" type="checkbox" />
         Eu li e aceito os <span>termos de uso</span>
       </label>
     );
@@ -58,15 +58,17 @@ export default function InputRegistration() {
   return (
     <div className="conteiner-registration">
       <h1>Cadastro</h1>
-      {renderEmail()}
-      {renderFirstName()}
-      {renderLastName()}
-      {renderPassword()}
-      {renderConfirmPassword()}
-      {renderRadio()}
-      <button type="button" className="btn-registration">
-        Registrar
-      </button>
+      <form className="form-registration">
+        {renderEmail()}
+        {renderFirstName()}
+        {renderLastName()}
+        {renderPassword()}
+        {renderConfirmPassword()}
+        {renderRadio()}
+        <button type="button" className="btn-registration">
+          Registrar
+        </button>
+      </form>
     </div>
   );
 }
