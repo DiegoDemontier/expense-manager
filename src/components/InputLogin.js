@@ -1,12 +1,19 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { getEmail } from '../actions';
+
 
 export default function InputLogin() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const [email, setEmail] = useState('');
+
   function renderPassword() {
     return (
       <label className="input-password">
         Senha
-        <input type="text" />
+        <input minLength="6" required type="password" />
       </label>
     );
   }
@@ -15,20 +22,27 @@ export default function InputLogin() {
     return (
       <label className="input-email">
         Email
-        <input type="email" />
+        <input 
+          required
+          type="email"
+          onChange={({ target }) => setEmail(target.value)}
+        />
       </label>
     );
   }
 
-  function teste(event) {
+  function handleClick(event) {
     event.preventDefault();
-    console.log('diego');
+    dispatch(
+      getEmail(email)
+    );
+    history.push('/wallet')
   }
 
   return (
     <div className="conteiner-login">
       <h1>Login</h1>
-      <form onSubmit={teste}>
+      <form onSubmit={handleClick}>
         {renderEmail()}
         {renderPassword()}
         <div className="btn-login">

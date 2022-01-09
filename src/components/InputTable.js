@@ -24,7 +24,6 @@ export default function InputTable() {
       }-0${new Date().getDate()}`
     );
   }, [expenses]);
-  console.log(date);
 
   function handleSubmit(event) {
     event.preventDefault();
