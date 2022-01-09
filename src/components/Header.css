@@ -11,10 +11,18 @@
     rgba(255, 255, 255, 0.5)
   );
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
+}
+
+.conteiner-header h1 {
+  color: #426696;
+}
+
+.conteiner-header p {
+  color: #426696;
 }
 
 @media (max-width: 950px) {
