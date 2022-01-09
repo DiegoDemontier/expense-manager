@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 export default function InputLogin() {
   function renderPassword() {
@@ -32,7 +33,6 @@ export default function InputLogin() {
         {renderPassword()}
         <div className="btn-login">
           <button type="submit">Entrar</button>
-          <button type="button">Cadastrar</button>
         </div>
       </form>
     </div>
