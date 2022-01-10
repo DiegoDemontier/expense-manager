@@ -6,7 +6,7 @@ import './InputTable.css';
 
 export default function InputTable() {
   const form = useRef(null);
-  const [date, setDate] = useState('2021-11-8');
+  const [date, setDate] = useState('');
   const [category, setCategory] = useState('Renda');
   const [description, setDescription] = useState('');
   const [value, setValue] = useState(0);
@@ -18,11 +18,6 @@ export default function InputTable() {
 
   useEffect(() => {
     if (expenses.length > 0) setId(expenses[expenses.length - 1].id + 1);
-    setDate(
-      `${new Date().getFullYear()}-${
-        new Date().getMonth() + 1
-      }-0${new Date().getDate()}`
-    );
   }, [expenses]);
 
   function handleSubmit(event) {
@@ -70,7 +65,7 @@ export default function InputTable() {
         Data
         <input
           className="form_input"
-          /* required */
+          required
           value={date}
           id="date"
           type="date"
