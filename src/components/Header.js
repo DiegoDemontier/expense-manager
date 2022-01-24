@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header className="conteiner-header">
-      <h1>Carteira</h1>
+      <h1>Personal Budget</h1>
       <p>{email}</p>
     </header>
   );
